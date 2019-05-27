@@ -1,0 +1,16 @@
+PROCEDE divide;
+VAR w;
+ARK
+  r := x;
+  q := 0;
+  w := y;
+  DURANTE w <= r PRUEBA w := 2 * w;
+  DURANTE w > y PRUEBA ARK
+    q := 2 * q;
+    w := w / 2;
+    AJA w <= r TONCE ARK
+      r := r - w;
+      q := q + 1
+    PRT
+  PRT
+PRT;
